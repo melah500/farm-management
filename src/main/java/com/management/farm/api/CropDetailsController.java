@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +34,7 @@ public class CropDetailsController implements CropDetailsControllerApi {
 
     @Override
     @GetMapping("/getByCriteria")
-    public List<CropDetailDto> getAllByCriteria(CropDetailsSearchDto cropDetailsSearchDto) {
+    public List<CropDetailDto> getAllByCriteria(@RequestBody CropDetailsSearchDto cropDetailsSearchDto) {
         List<CropDetail> cropsDetails = cropDetailService.findByCriteria(cropDetailsSearchDto);
         List<CropDetailDto> mappedCropDetails =
                 cropsDetails.stream().map(cropDetail -> cropDetailMapper.map(cropDetail))
