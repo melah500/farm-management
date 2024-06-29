@@ -33,8 +33,9 @@ public class CropDetailsController implements CropDetailsControllerApi {
     }
 
     @Override
-    @GetMapping("/getByCriteria")
+    @PostMapping("/getByCriteria")
     public List<CropDetailDto> getAllByCriteria(@RequestBody CropDetailsSearchDto cropDetailsSearchDto) {
+        log.info("Received search criteria request from client : {}", cropDetailsSearchDto);
         List<CropDetail> cropsDetails = cropDetailService.findByCriteria(cropDetailsSearchDto);
         List<CropDetailDto> mappedCropDetails =
                 cropsDetails.stream().map(cropDetail -> cropDetailMapper.map(cropDetail))
