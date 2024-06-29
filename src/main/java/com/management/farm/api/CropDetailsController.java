@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/v1/cropDefinition")
+@RequestMapping("/api/v1/cropDetail")
 @Slf4j
 public class CropDetailsController implements CropDetailsControllerApi {
 
