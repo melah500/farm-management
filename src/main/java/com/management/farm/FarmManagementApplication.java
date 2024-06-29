@@ -14,16 +14,16 @@ public class FarmManagementApplication {
         ConfigurableApplicationContext applicationContext =
                 SpringApplication.run(FarmManagementApplication.class, args);
 
-        FarmController farmControllerBean = applicationContext.getBean(FarmController.class);
+        var farmControllerBean = applicationContext.getBean(FarmController.class);
         farmControllerBean.getAll();
 
-        CropDetailsController cropDetailsController = applicationContext.getBean(CropDetailsController.class);
+        var cropDetailsController = applicationContext.getBean(CropDetailsController.class);
         cropDetailsController.getAllByCriteria(
-               CropDetailsSearchDto.builder()
-                       .farmIdentifier("FA01")
-                       .seasonIdentifier("SI02")
-                       .cropIdentifier("CI01")
-                       .build()
+                CropDetailsSearchDto.builder()
+                        .farmIdentifier("FA01")
+                        .seasonIdentifier("SI02")
+                        .cropIdentifier("CI01")
+                        .build()
         );
     }
 
