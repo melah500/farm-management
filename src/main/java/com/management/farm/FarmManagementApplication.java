@@ -17,13 +17,13 @@ public class FarmManagementApplication {
         FarmController farmControllerBean = applicationContext.getBean(FarmController.class);
         farmControllerBean.getAll();
 
-        CropDetailsController cropDetailsController = applicationContext.getBean(CropDetailsController.class);
-        cropDetailsController.getAllByCriteria(
-               CropDetailsSearchDto.builder()
-                       .farmIdentifier("FA01")
-                       .seasonIdentifier("SI02")
-                       .cropIdentifier("CI01")
-                       .build()
+//        CropDetailsController cropDetailsController = applicationContext.getBean(CropDetailsController.class);
+//        cropDetailsController.getAllByCriteria(
+//               CropDetailsSearchDto.builder()
+//                       .farmIdentifier("FA01")
+//                       .seasonIdentifier("SI02")
+//                       .cropIdentifier("CI01")
+//                       .build()
         );
     }
 
